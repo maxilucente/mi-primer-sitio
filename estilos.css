@@ -1,0 +1,225 @@
+/* Estilos compartidos por las dos páginas */
+:root {
+    --fondo: #101014;
+    --panel: #1b191e;
+    --texto: #f7f3f0;
+    --texto-secundario: #c5bec0;
+    --rojo: #e53b3b;
+    --borde: #393238;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.encabezado {
+    padding: 55px 20px 45px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 0, #792424 0, transparent 55%),
+                linear-gradient(135deg, #171519, #080808);
+    border-bottom: 1px solid var(--borde);
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+.etiqueta {
+    color: #ff6969;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.subtitulo {
+    color: #e7b8b8;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px;
+    background: #171519;
+    border-bottom: 1px solid var(--borde);
+}
+
+nav a {
+    padding: 9px 20px;
+    border-radius: 5px;
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.activo {
+    background: var(--rojo);
+    color: white;
+}
+
+main {
+    width: min(1080px, calc(100% - 34px));
+    margin: 34px auto 60px;
+}
+
+.presentacion {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 22px;
+}
+
+.tarjeta {
+    padding: clamp(22px, 4vw, 38px);
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    line-height: 1.2;
+    margin-top: 8px;
+}
+
+h3 {
+    line-height: 1.25;
+}
+
+p,
+li {
+    color: var(--texto-secundario);
+}
+
+strong {
+    color: white;
+}
+
+.lateral img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 11px 17px;
+    background: var(--rojo);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    background: #b92727;
+}
+
+.seccion {
+    margin-top: 38px;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.numero {
+    color: #ff6969;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.galeria-fotos > p {
+    color: var(--texto-secundario);
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.foto-airbag {
+    margin: 0;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+
+.foto-airbag img {
+    display: block;
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+}
+
+.foto-airbag figcaption {
+    padding: 12px 15px;
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+footer {
+    padding: 23px;
+    text-align: center;
+    background: #080808;
+    border-top: 1px solid var(--borde);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    .presentacion,
+    .columnas,
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-airbag img {
+        height: auto;
+        max-height: 360px;
+    }
+
+    .encabezado {
+        padding: 42px 15px 35px;
+    }
+
+    main {
+        margin-top: 24px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+    }
+}
